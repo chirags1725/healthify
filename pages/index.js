@@ -5,11 +5,13 @@ import { useState } from "react";
 export default function Home() {
 
   const router = useRouter();
-  // State to manage the input value
+
+  const url = 'http://localhost:3000/'
+  
   const [bookingid, setBookingid] = useState('');
   const [name, setName] = useState('');
-
-  // Event handler for input change
+  const [loading, setLoader] = useState(false);
+  
   const handleChangeInBookingId = (event) => {
     setBookingid(event.target.value);
   };
@@ -18,12 +20,15 @@ export default function Home() {
     setName(event.target.value);
   };
 
-  // Event handler for form submission (optional)
+
   const handleSubmit = (event) => {
     event.preventDefault();
+    setLoader(true)
     document.getElementById("submit").disabled = true;
-    // Process the input value, e.g., submit it to the backend
-    fetch(`https://healthify-smoky.vercel.app/api/hello?id=${bookingid}`).then((a)=>{
+    setLoader('true')
+    
+    fetch(`${url}/api/hello?id=${bookingid}`).then((a)=>{
+      setLoader(false)
       return a.json()
     }).then((parsed)=>{
       console.log(parsed[0]['customer_name'])
@@ -44,6 +49,11 @@ export default function Home() {
 
   return (
     <>
+    {loading ? <div className={styles.spinner}>
+      <span className={styles.loader}></span>
+    </div>:""
+}
+    <b><h1 style={{'margin-left':'40px','margin-top': '20px'}}>Healthify</h1></b>
     <div className={styles.login}>
       <div className={styles.img}>
         <img src="/images/image.png"></img>
