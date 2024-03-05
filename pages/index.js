@@ -6,11 +6,12 @@ export default function Home() {
 
   const router = useRouter();
 
-  const url = 'http://localhost:3000/'
+  const url = 'http://localhost:3000'
   
   const [bookingid, setBookingid] = useState('');
   const [name, setName] = useState('');
   const [loading, setLoader] = useState(false);
+  const [error, setError] = useState(null);
   
   const handleChangeInBookingId = (event) => {
     setBookingid(event.target.value);
@@ -36,11 +37,9 @@ export default function Home() {
         sessionStorage.setItem('userdata',JSON.stringify(parsed))
         router.push(`user/${bookingid}`);
       }
-      else{
-
-      }
     }).catch((err)=>{
       console.log(err)
+      setError("Please enter valid details")
     document.getElementById("submit").disabled = false;
 
     })
@@ -53,14 +52,17 @@ export default function Home() {
       <span className={styles.loader}></span>
     </div>:""
 }
-    <b><h1 style={{'margin-left':'40px','margin-top': '20px'}}>Healthify</h1></b>
+    <b><h1 style={{'marginLeft':'40px','marginTop': '20px',"fontFamily": '"Outfit", sans-serif',
+  'fontOpticalSizing': 'auto',
+  'fontWeight': '700',
+  'fontStyle': 'normal'}}>Healthify</h1></b>
     <div className={styles.login}>
       <div className={styles.img}>
         <img src="/images/image.png"></img>
       </div>
       <div className={styles.form}>
       <div className={styles.formbox}>
-
+        {error ? <div className={styles.errorbox}>{error}</div> : ""}
         <b><h1>Enter your details</h1></b>
         <form>
         <input type="text" value={bookingid}

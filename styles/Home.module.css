@@ -1,3 +1,4 @@
+
 .login {
   display: flex;
 }
@@ -22,6 +23,8 @@
   height: 300px;
   width: 40vw;
   transform: translateY(-50%);
+  overflow: hidden;
+
 }
 .login .form .formbox h1 {
   font-size: 24px;
@@ -96,7 +99,12 @@
     border: 3px solid;
     border-color: #48f596 transparent;
   }
-  
+  .errorbox
+  {
+    background-color: rgba(255, 157, 198, 0.542);
+    text-align: center;
+    color: red;padding-top: 4px;
+  }
   @keyframes rotation {
     0% {
       transform: rotate(0deg);
@@ -127,4 +135,20 @@
       .login input {
         width: 60vw;
       }
+  }
+
+
+  .greetings{
+    font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  font-size:22px;
+
+  margin-top: 20px;
+  }
+  .greetings span
+  {
+  font-size:28px;
+    color:rgb(77, 77, 255);
   }
