@@ -23,7 +23,7 @@ export default function Home() {
     event.preventDefault();
     document.getElementById("submit").disabled = true;
     // Process the input value, e.g., submit it to the backend
-    fetch(`${process.env.url}/api/hello?id=${bookingid}`).then((a)=>{
+    fetch(`https://healthify-smoky.vercel.app/api/hello?id=${bookingid}`).then((a)=>{
       return a.json()
     }).then((parsed)=>{
       console.log(parsed[0]['customer_name'])
