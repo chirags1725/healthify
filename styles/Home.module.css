@@ -124,4 +124,7 @@
         width: 80vw;
         transform: translateX(-50%);
       }
+      .login input {
+        width: 60vw;
+      }
   }
