@@ -1,15 +1,18 @@
 import { MongoClient, ServerApiVersion } from 'mongodb';
+import Cors from 'cors';
+import initMiddleware from '../../lib/init-middleware';
+
+// Initialize the cors middleware
+const cors = initMiddleware(
+  Cors({
+    methods: ['GET', 'OPTIONS'], // Adjust allowed methods as needed
+    origin: 'http://localhost:3000', // Adjust origin as needed
+  })
+);
 
 const handler = async (req, res) => {
-  // Set CORS headers
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000'); // Adjust origin as needed
-  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS'); // Adjust allowed methods as needed
-
-  // Check if it's a preflight request (OPTIONS) and handle it
-  if (req.method === 'OPTIONS') {
-    res.status(200).end();
-    return;
-  }
+  // Run cors middleware
+  await cors(req, res);
 
   // MongoDB connection and query logic
   const uri = process.env.MONGO_URI;
