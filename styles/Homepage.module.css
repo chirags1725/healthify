@@ -84,20 +84,12 @@ font-family: "Comfortaa", sans-serif;
 .img .image
 {
     max-width: 554px;
-    width: 100vw;
+    width: 60vw;
     height:auto;
     padding: none;
     margin: none;
 }
-@media (max-width:608px) {
-    .img{
-        /* scale:0.5; */
-        opacity: .6;
-    }
-    .name{
-        top:60vh
-    }
-}
+
 
 .name
 {
@@ -113,4 +105,14 @@ font-family: "Comfortaa", sans-serif;
 {
     font-size: 40px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+@media (max-width:608px) {
+    .img{
+        /* scale:0.5; */
+        opacity: .6;
+    }
+    .name
+    {
+        top:60vh
+    }
 }
