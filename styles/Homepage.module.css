@@ -46,7 +46,7 @@ font-family: "Comfortaa", sans-serif;
 {
     display: flex;
     height: 1px;
-    justify-content: end;
+    justify-content: flex-end;
     background-color: rgb(96, 96, 96);
     margin-top: 10px;
     margin-left: -25px;
@@ -54,11 +54,9 @@ font-family: "Comfortaa", sans-serif;
 }
 .heading .circle
 {
-    /* display: flex; */
     width: 10px;
     height: 10px;
     transform: translateY(-50%);
     background-color: rgb(209, 208, 208);
     border-radius: 50%;
-    /* position: relative; */
 }
