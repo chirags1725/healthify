@@ -1,12 +1,13 @@
 import styles from "@/styles/Home.module.css";
 import { useRouter } from 'next/router';
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Home() {
 
   const router = useRouter();
 
-  const url = 'https://healthify-smoky.vercel.app'
+  const url = 'https://heathify-smoky.vercel.app'
   
   const [bookingid, setBookingid] = useState('');
   const [name, setName] = useState('');
@@ -43,7 +44,8 @@ export default function Home() {
     document.getElementById("submit").disabled = false;
 
     })
-    console.log('Input value:', bookingid);
+    
+    
   };
 
   return (
@@ -52,13 +54,10 @@ export default function Home() {
       <span className={styles.loader}></span>
     </div>:""
 }
-    <b><h1 style={{'marginLeft':'40px','marginTop': '20px',"fontFamily": '"Outfit", sans-serif',
-  'fontOpticalSizing': 'auto',
-  'fontWeight': '700',
-  'fontStyle': 'normal'}}>Healthify</h1></b>
+    <b><Image className={styles.image} src="/images/logo.webp" width={128} height={49.6} /></b>
     <div className={styles.login}>
       <div className={styles.img}>
-        <img src="/images/image.png"></img>
+        <img src="/images/image.png" layout="responsive"></img>
       </div>
       <div className={styles.form}>
       <div className={styles.formbox}>

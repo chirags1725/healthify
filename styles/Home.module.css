@@ -63,6 +63,14 @@
 
   padding-right: 20px;
 }
+
+.image
+{
+  position: absolute;
+  left:40px;
+  top: 25px;
+}
+
 .spinner {
   position: absolute;
   top: 0px;
@@ -151,4 +159,14 @@
   {
   font-size:28px;
     color:rgb(77, 77, 255);
+  }
+
+  .div
+  {
+    position: absolute;
+    left:400px;
+    top:60px;
+    background-color: white;
+    height: 100px;
+    width:200px;
   }
