@@ -43,6 +43,7 @@ export default function User() {
     <>
     <div className={styles.cover}>
     <div className={styles.logobox}>
+        <div></div>
       <div className={styles.logo}>
       <Image className={styles.image} src="/images/logo.webp" width={128} height={49.6} alt="logo"/>
       <hr></hr>
