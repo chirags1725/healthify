@@ -95,7 +95,7 @@ font-family: "Comfortaa", sans-serif;
 {
     position: absolute;
     margin-left: 20px;
-    top:65vh;
+    top:80vh;
 }
 .name span:nth-child(1)
 {
@@ -113,6 +113,6 @@ font-family: "Comfortaa", sans-serif;
     }
     .name
     {
-        top:60vh
+        top:65vh
     }
 }
