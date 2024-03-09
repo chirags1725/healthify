@@ -2,9 +2,11 @@
 import { useEffect, useRef, useState } from 'react';
 import styles from '@/styles/chart.module.css'
 import { useRouter } from 'next/router';
+import IndicatorBar from '../Components/IndicatorBar';
 
 
 const BodyCanvas = () => {
+
   const router = useRouter()
 
   const canvasRef = useRef(null);
@@ -57,7 +59,8 @@ const BodyCanvas = () => {
     }
     return <div key={elem['test_parameter_id']} className={styles.test}>{elem['parameter_name']}</div>
   })}
-  <canvas ref={canvasRef} width={600} height={600} /></>;
+  <canvas ref={canvasRef} width={600} height={600} />
+  </>
 };
 
 export default BodyCanvas;

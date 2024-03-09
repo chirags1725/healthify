@@ -9,3 +9,35 @@
 
     background-color: lightgreen;
 }
+
+.indicatorbar {
+    width: 100%;
+    height: 20px;
+    background-color: #ddd; /* Default background color */
+    position: relative;
+  }
+  
+  .indicator {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+  }
+  
+  .indicator.lower {
+    left: 0;
+    width: calc(25% - 1px); /* Adjust the percentage based on your lower value */
+    background-color: red; /* Color for lower value */
+  }
+  
+  .indicator.normal {
+    left: calc(25% + 1px); /* Adjust the percentage based on your lower value */
+    width: calc(50% - 2px); /* Adjust the percentage based on your normal range */
+    background-color: green; /* Color for normal range */
+  }
+  
+  .indicator.upper {
+    right: 0;
+    width: calc(25% - 1px); /* Adjust the percentage based on your upper value */
+    background-color: red; /* Color for upper value */
+  }
+  

@@ -144,29 +144,3 @@
         width: 60vw;
       }
   }
-
-
-  .greetings{
-    font-family: "Outfit", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 800;
-  font-style: normal;
-  font-size:22px;
-
-  margin-top: 20px;
-  }
-  .greetings span
-  {
-  font-size:28px;
-    color:rgb(77, 77, 255);
-  }
-
-  .div
-  {
-    position: absolute;
-    left:400px;
-    top:60px;
-    background-color: white;
-    height: 100px;
-    width:200px;
-  }

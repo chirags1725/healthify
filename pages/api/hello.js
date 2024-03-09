@@ -1,12 +1,12 @@
-import { MongoClient, ServerApiVersion } from 'mongodb';
+import { MongoClient, ServerApiVersion } from "mongodb";
 
 const handler = async (req, res) => {
   // Set CORS headers
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000'); // Adjust origin as needed
-  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS'); // Adjust allowed methods as needed
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000"); // Adjust origin as needed
+  res.setHeader("Access-Control-Allow-Methods", "GET,OPTIONS"); // Adjust allowed methods as needed
 
   // Check if it's a preflight request (OPTIONS) and handle it
-  if (req.method === 'OPTIONS') {
+  if (req.method === "OPTIONS") {
     res.status(200).end();
     return;
   }
@@ -19,24 +19,26 @@ const handler = async (req, res) => {
       version: ServerApiVersion.v1,
       strict: true,
       deprecationErrors: true,
-    }
+    },
   });
 
   try {
     await client.connect();
-    
-    const database = client.db('healthify');
-    const collection = database.collection('user_data');
 
-    const userdata = await collection.find({"booking_id": parseInt(req.query.id)}).toArray();
-    
+    const database = client.db("healthify");
+    const collection = database.collection("user_data");
+
+    const userdata = await collection
+      .find({ booking_id: parseInt(req.query.id) })
+      .toArray();
+
     res.status(200).json(userdata);
   } catch (error) {
-    console.error('Error:', error);
-    res.status(500).json({ message: 'Internal Server Error' });
+    console.error("Error:", error);
+    res.status(500).json({ message: "Internal Server Error" });
   } finally {
     await client.close();
   }
-}
+};
 
 export default handler;
