@@ -84,7 +84,7 @@ font-family: "Comfortaa", sans-serif;
 .img .image
 {
     max-width: 554px;
-    width: 60vw;
+    width: 80vw;
     height:auto;
     padding: none;
     margin: none;
@@ -95,7 +95,7 @@ font-family: "Comfortaa", sans-serif;
 {
     position: absolute;
     margin-left: 20px;
-    top:80vh;
+    top:65vh;
 }
 .name span:nth-child(1)
 {
