@@ -4,8 +4,13 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-      <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet" />
-        </Head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Kumbh+Sans:wght@100..900&family=Outfit:wght@100..900&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
       <body>
         <Main />
         <NextScript />

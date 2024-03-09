@@ -6,6 +6,7 @@ const IndicatorBar = () => {
 
   return (
     <div className={styles.indicatorBar}>
+      hi
     </div>
   );
 };

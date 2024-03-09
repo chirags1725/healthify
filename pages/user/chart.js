@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from 'react';
 import styles from '@/styles/chart.module.css'
 import { useRouter } from 'next/router';
-import IndicatorBar from '../Components/IndicatorBar';
+import IndicatorBar from '../../Components/IndicatorBar';
 
 
 const BodyCanvas = () => {
