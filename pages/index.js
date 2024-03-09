@@ -53,8 +53,9 @@ export default function Home() {
     {loading ? <div className={styles.spinner}>
       <span className={styles.loader}></span>
     </div>:""
+
 }
-    <b><Image className={styles.image} src="/images/logo.webp" width={128} height={49.6} /></b>
+    <b><Image className={styles.image} src="/images/logo.webp" width={128} height={49.6} alt="logo"/></b>
     <div className={styles.login}>
       <div className={styles.img}>
         <img src="/images/image.png" layout="responsive"></img>
