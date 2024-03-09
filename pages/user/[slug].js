@@ -55,12 +55,16 @@ export default function User() {
         <br />Health Report
 
         <div className={styles.hr}><div className={styles.circle}>
-        </div></div>
+        </div>
+        </div>
 
         
         
 
       </div>
+
+      <div style={{marginLeft:'40px',marginTop:"20px",fontSize:"20px",fontFamily:"'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"}}>An Insightful Health Analytics Report
+        <br/>for Easier Understanding </div>     
       
       <div className={styles.img} >      
       <img className={styles.image} src="/images/health-tech.png" alt="logo"/>

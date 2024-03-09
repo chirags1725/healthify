@@ -1,6 +1,6 @@
 .cover
 {
-    overflow-x:hidden ;
+    overflow:hidden ;
     position: relative;
     min-height: 100vh;
     min-width: 100vw;
@@ -23,13 +23,14 @@
     margin-top: 20px;
     margin-right: 40px;
     align-self: flex-end;
+    margin-bottom: 40px;
 }
-/* .logo
+.logo
 {
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
-} */
+}
 .heading span
 {
 font-family: "Comfortaa", sans-serif;
@@ -74,17 +75,23 @@ font-family: "Comfortaa", sans-serif;
 {
     overflow-x: hidden;
     position: absolute;
-    right: -100px;
-    bottom: 0px;
+    right: max(-40px,-10vw);
+    bottom: -20px;
+    padding: none;
+    margin: none;
     /* opacity: 1; */
 }
 .img .image
 {
-    width: 554px;
-    height:580px;
+    max-width: 554px;
+    width: 60vw;
+    height:auto;
+    padding: none;
+    margin: none;
 }
-@media (max-width:608) {
+@media (max-width:608px) {
     .img{
+        /* scale:0.5; */
         opacity: .6;
     }
 }

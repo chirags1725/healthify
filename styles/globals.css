@@ -2,9 +2,10 @@
 {
     transition: .2s;
     margin: 0px;
-    padding: 0px;
+    padding: 0;
+    scroll-behavior: smooth;
 }
 body{
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
     background-color:rgba(235, 234, 255, 0.845);
 }
