@@ -1,0 +1,51 @@
+.box
+{
+    font-weight: 600;
+    position: relative;
+    background-color: rgb(230, 209, 252);
+    width: 80vw;
+    left:50%;
+    transform: translate(-50%,0);
+    margin-bottom: 50px;
+    padding: 20px;
+    border-radius: 10px;
+}
+.box h3{
+    font-size: 22px;
+}
+.testboxred
+{
+    background-color: rgba(255, 0, 0, 0.34);
+}
+.testboxgreen
+{
+    background-color: rgba(77, 255, 77, 0.4);
+
+}
+.testboxgreen,
+.testboxred
+{
+    /* background-color: rgb(165, 165, 165); */
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+}
+.testname
+{
+    font-size: 20px;
+    margin-bottom: 25px;;
+}
+.boundline{
+    display: flex;
+    justify-content: space-around;
+}
+.lbound,
+.value,
+.ubound
+{
+    font-weight: 550;
+}
+.result{
+    font-weight: 500;
+    margin-top: 20px;
+}

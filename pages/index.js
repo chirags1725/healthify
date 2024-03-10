@@ -1,7 +1,10 @@
 import styles from "@/styles/Home.module.css";
 import { useRouter } from 'next/router';
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import Image from "next/image";
+import OpenAI from "openai";
+import { GoogleGenerativeAI } from "@google/generative-ai";
+
 
 export default function Home() {
 
@@ -23,6 +26,10 @@ export default function Home() {
   };
 
 
+
+
+
+
   const handleSubmit = (event) => {
     event.preventDefault();
     setLoader(true)
@@ -36,6 +43,32 @@ export default function Home() {
       console.log(parsed[0]['customer_name'])
       if (parsed[0]['customer_name'].toLowerCase() == name.toLowerCase()){
         sessionStorage.setItem('userdata',JSON.stringify(parsed))
+
+
+
+    let groups= []
+    let arr=[]
+        
+        parsed[0]['test_values'].forEach(test => {
+        if(test['parameter_value'].toLowerCase() === "head"){
+            if(arr.length > 0){
+                groups.push(arr)
+            }
+            arr=[test['parameter_name']]
+        }
+            else{
+                 arr.push(JSON.stringify(test))
+
+            }
+        
+    })
+    if (arr.length>0){
+        groups.push(arr)
+    }
+    console.log(groups)
+
+    sessionStorage.setItem("testdata",JSON.stringify(groups))
+  
         router.push(`user/${bookingid}`);
       }
     }).catch((err)=>{
