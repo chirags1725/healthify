@@ -4,6 +4,7 @@ import styles from "@/styles/Homepage.module.css";
 import Image from "next/image";
 import OpenAI from 'openai'
 import Tests from "@/Components/tests";
+import Link from "next/link";
 
 export default function User() {
   const router = useRouter();
@@ -20,16 +21,16 @@ export default function User() {
   const openai = new OpenAI({apiKey:"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",dangerouslyAllowBrowser: true});
 
   async function main() {
-    const completion = await openai.chat.completions.create({
-      model:"gpt-3.5-turbo", 
-      messages:[{"role": "user", "content": "make a json with the format ['organ(for which the test is conducted)':,brief(in max 20 words):] for the tests [Hemoglobin RBC Count PCV MCV MCH MCHC RDW (CV) RDW-SD TLC DIFFERENTIAL LEUCOCYTE COUNT Neutrophils Lymphocytes Monocytes Eosinophils Basophils Absolute leukocyte counts Neutrophils. Lymphocytes. Monocytes. Eosinophils. Basophils. Platelet Count Mean Platelet Volume (MPV) PCT PDW P-LCR P-LCC Mentzer Index]"}],
-      response_format:{ type: "json_object" }
+  //   const completion = await openai.chat.completions.create({
+  //     model:"gpt-3.5-turbo", 
+  //     messages:[{"role": "user", "content": "make a json with the format ['organ(for which the test is conducted)':,brief(in max 20 words):] for the tests [Hemoglobin RBC Count PCV MCV MCH MCHC RDW (CV) RDW-SD TLC DIFFERENTIAL LEUCOCYTE COUNT Neutrophils Lymphocytes Monocytes Eosinophils Basophils Absolute leukocyte counts Neutrophils. Lymphocytes. Monocytes. Eosinophils. Basophils. Platelet Count Mean Platelet Volume (MPV) PCT PDW P-LCR P-LCC Mentzer Index]"}],
+  //     response_format:{ type: "json_object" }
   
   
-    })
-    sessionStorage.setItem('dataai',completion.choices[0].message.content)
-  console.log(completion.choices[0].message.content)
-    setDataai(completion.choices[0].message.content);
+  //   })
+  //   sessionStorage.setItem('dataai',completion.choices[0].message.content)
+  // console.log(completion.choices[0].message.content)
+  //   setDataai(completion.choices[0].message.content);
 
 
   }
@@ -92,10 +93,21 @@ export default function User() {
         <br></br><span>{data && data.customer_name}</span>
       </div>
       </div>
-      <center style={{marginTop:'60px',marginBottom:'80px'}}><h1>
+      <center style={{marginTop:'60px',marginBottom:'20px'}}><h1>
         Tests
       </h1>
       </center>
+      <div className={styles.chartbutton}>
+        <div></div>
+        <div >
+      <Link href={"/user/chart"} style={{textDecoration:'none',color:'black'}}>
+      <div className={styles.chart}>
+        Chart view
+        </div>
+      </Link>
+      </div>
+      </div>
+      
 
       {group&&group.map((e)=>{
         return <Tests key={e[0]} group={e}/>

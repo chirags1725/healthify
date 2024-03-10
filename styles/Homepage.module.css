@@ -116,3 +116,26 @@ font-family: "Comfortaa", sans-serif;
         top:65vh
     }
 }
+
+
+.chartbutton{
+    position: relative;
+    width: 80%;
+    left: 50%;
+    transform: translate(-50%,0);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    
+
+}
+.chart{
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.chart:hover{
+    /* background-color: rgba(0,0,0,.04); */
+    /* box-shadow: 0px 0px 10px rgba(0,0,0,.2); */
+    text-decoration: underline;
+}

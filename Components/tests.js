@@ -15,8 +15,8 @@ function Tests(props) {
     <h3>
       {props.group[0]}
     </h3>
-    {tests.map((e)=>{
-      return <Box value={e}></Box>
+    {tests.map((e,index)=>{
+      return <Box key={index} value={e}></Box>
     })}
     
     {/* <h3>{data[0]}</h3>
