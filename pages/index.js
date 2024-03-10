@@ -8,7 +8,7 @@ export default function Home() {
 
   const router = useRouter();
 
-  const url = 'http://localhost:3000/'
+  const url = 'https://healthify-smoky.vercel.app/'
   
   const [bookingid, setBookingid] = useState('');
   const [name, setName] = useState('');
