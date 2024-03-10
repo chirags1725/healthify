@@ -17,7 +17,7 @@ export default function User() {
 
 
 
-  const openai = new OpenAI({apiKey:"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",dangerouslyAllowBrowser: true});
+  const openai = new OpenAI({apiKey:"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",dangerouslyAllowBrowser: true});
 
   async function main() {
     const completion = await openai.chat.completions.create({

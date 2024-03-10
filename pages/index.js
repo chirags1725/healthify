@@ -2,15 +2,13 @@ import styles from "@/styles/Home.module.css";
 import { useRouter } from 'next/router';
 import { useState,useEffect } from "react";
 import Image from "next/image";
-import OpenAI from "openai";
-import { GoogleGenerativeAI } from "@google/generative-ai";
 
 
 export default function Home() {
 
   const router = useRouter();
 
-  const url = 'https://healthify-smoky.vercel.app'
+  const url = 'http://localhost:3000/'
   
   const [bookingid, setBookingid] = useState('');
   const [name, setName] = useState('');

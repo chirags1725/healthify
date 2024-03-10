@@ -32,7 +32,7 @@ const handler = async (req, res) => {
       .find({ booking_id: parseInt(req.query.id) })
       .toArray();
 
-    collection.
+    // collection.
 
     res.status(200).json(userdata);
   } catch (error) {
