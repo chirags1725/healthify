@@ -18,7 +18,7 @@ const BodyCanvas = () => {
 
     // sessionStorage.getItem('userdata') ?? setData(sessionStorage.getItem('userdata'))
     data && data['test_values'].map((elem) => {
-      console.log(elem)
+      console.log(elem['parameter_name'])
     })
 
 

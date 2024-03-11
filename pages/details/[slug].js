@@ -1,0 +1,77 @@
+import { useRouter } from 'next/router'
+import React, { useEffect, useState } from 'react'
+import { GoogleGenerativeAI } from "@google/generative-ai";
+import styles from './details.module.css'
+
+function User(props) {
+  const router = useRouter()
+  const [dataai, setDataai] = useState(null);
+  const [abn, setAbn] = useState(null);
+  // let dataai = "The MCV (mean corpuscular volume) test measures the average size of red blood cells. It's part of a complete blood count (CBC) test. Red blood cells carry oxygen throughout the body. Larger-than-average red blood cells may indicate a vitamin B12 or folate deficiency. Smaller-than-average red blood cells may indicate iron deficiency. An MCV within the normal range suggests healthy red blood cell size."
+
+
+// Access your API key (see "Set up your API key" above)
+const genAI = new GoogleGenerativeAI('AIzaSyBqyovvBUxbpqkshLAxRi91eFB88kBF3dg');
+
+async function main() {
+  try{
+  // For text-only input, use the gemini-pro model
+  const model = genAI.getGenerativeModel({ model: "gemini-pro"});
+
+  const slug = await router.query.slug
+  const prompt = `Explain ${slug} test in  a jargon-free language in around 80 words.`
+
+  const result = await model.generateContent(prompt);
+  const abn = await model.generateContent(`Common life reasons for abnormal results in ${slug} test in 2-3 lines. answer in points seperated by a ('-'). dont use any bold letter or any letter that will show any special character in text.`);
+  const response = await result.response;
+  const text = response.text();
+  const abnresponse = await abn.response;
+  const abntext = abnresponse.text();
+
+    setDataai(text);
+    setAbn(abntext);
+  }
+  catch(err){
+    setDataai("Api limit exceeded. Please try again in some time")
+    setAbn("Api limit exceeded. Please try again in some time")
+  }
+
+}
+
+
+
+console.log(router.query.slug)
+useEffect(()=>{
+main()
+
+
+},[])
+  return (
+
+    <div>
+      <h2 className={styles.h2}>Health Advisory</h2>
+      {/* {router.query.slug} */}
+      <div className={styles.desc}>
+        <div>
+
+        <img src='/images/test.png'></img>
+        </div>
+        <div>
+
+        <h4>{router.query.slug}</h4>
+      {dataai ? dataai : <div className={styles.loading}>Loading...</div>}
+        </div>
+
+
+
+
+      </div>
+        <br/>{abn && abn.split('-').map((element) => {
+          return <div>{element.trim()}</div>
+        })}
+
+        </div>
+  )
+}
+
+export default User

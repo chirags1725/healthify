@@ -47,6 +47,9 @@ export default function Home() {
     let groups= []
     let arr=[]
         
+    if(parsed[0]['test_values'][0]['parameter_value'].toLowerCase()!=="head"){
+      arr.push("Tests")
+    }
         parsed[0]['test_values'].forEach(test => {
         if(test['parameter_value'].toLowerCase() === "head"){
             if(arr.length > 0){

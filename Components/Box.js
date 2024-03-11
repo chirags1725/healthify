@@ -11,7 +11,7 @@ function Box(props) {
     // 4:up,
     // 5:pv,
     // 6:unit
-    const link = `/details/${props.value[0]}`
+    const link = `/details/${props.value[0]}?high=${props.value[1]}&lb=${props.value[2]}&ub=${props.value[3]}&pv=${props.value[4]}&unit=${props.value[5]}`
 
     if(props.value[4] > props.value[2] && props.value[4] < props.value[3]){
         var result = "Everything looks great."
