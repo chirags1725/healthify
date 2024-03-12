@@ -2,12 +2,14 @@ import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import styles from './details.module.css'
+import IndicatorBar from '@/Components/IndicatorBar';
 
-function User(props) {
+function User() {
   const router = useRouter()
   const [dataai, setDataai] = useState(null);
   const [abn, setAbn] = useState(null);
   // let dataai = "The MCV (mean corpuscular volume) test measures the average size of red blood cells. It's part of a complete blood count (CBC) test. Red blood cells carry oxygen throughout the body. Larger-than-average red blood cells may indicate a vitamin B12 or folate deficiency. Smaller-than-average red blood cells may indicate iron deficiency. An MCV within the normal range suggests healthy red blood cell size."
+  // let abn = "The MCV (mean corpuscular volume) test measures the average size of red blood cells. It's part of a complete blood count (CBC) test. Red blood cells carry oxygen throughout the body. Larger-than-average red blood cells may indicate a vitamin B12 or folate deficiency. Smaller-than-average red blood cells may indicate iron deficiency. An MCV within the normal range suggests healthy red blood cell size."
 
 
 // Access your API key (see "Set up your API key" above)
@@ -32,6 +34,7 @@ async function main() {
     setAbn(abntext);
   }
   catch(err){
+    console.log(err)
     setDataai("Api limit exceeded. Please try again in some time")
     setAbn("Api limit exceeded. Please try again in some time")
   }
@@ -48,7 +51,7 @@ main()
 },[])
   return (
 
-    <div>
+    <div className={styles.body}>
       <h2 className={styles.h2}>Health Advisory</h2>
       {/* {router.query.slug} */}
       <div className={styles.desc}>
@@ -62,15 +65,34 @@ main()
       {dataai ? dataai : <div className={styles.loading}>Loading...</div>}
         </div>
 
-
-
-
       </div>
-        <br/>{abn && abn.split('-').map((element) => {
+
+
+
+      <div className={styles.details}>
+          <b style={{fontSize:'18px'}}>{router.query.slug}</b> {router.query.pv} {router.query.unit}
+          <div className={styles.indicator}>
+            {router.query.high==="Y"?<div className={styles.highyes}></div> : <div className={styles.highno}></div>}
+        
+            {parseFloat(router.query.pv) > parseFloat(router.query.ub) ? "High": (parseFloat(router.query.pv) < parseFloat(router.query.lb) ? "Low" : "Normal")}
+          </div>
+
+          <IndicatorBar pv={router.query.pv} ub={router.query.ub} lb={router.query.lb}></IndicatorBar>
+        
+        <hr></hr>
+        <div className={styles.symp}>
+
+
+        <h3>Common reasons for abnormal results: </h3>
+
+        <br/>{abn ? abn.split('-').map((element) => {
           return <div>{element.trim()}</div>
-        })}
+        }): <div className={styles.loading}>Loading...</div>}
+        </div>
 
         </div>
+        </div>
+
   )
 }
 

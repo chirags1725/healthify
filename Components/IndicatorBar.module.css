@@ -1,0 +1,65 @@
+.indicatorBar{
+    margin-top: 28px;
+    display: flex;
+    gap:4px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 50px;
+}
+
+.indicatorBar div{
+    width: calc(100% / 3);
+    height: 20px;
+    background-color: rgba(255, 55, 55, 0.895);
+    align-items: center;
+    text-align: center;
+    color:white;
+
+}
+.indicatorBar div:hover{
+    scale:1.02;
+    background-color: rgb(255, 0, 0);
+}
+.indicatorBar div:nth-child(2):hover{
+    background-color: rgb(28, 159, 28);
+
+}
+.indicatorBar div:nth-child(2){
+    border-radius: 0px;
+    background-color: rgba(28, 159, 28,.8);
+}
+.indicatorBar div:nth-child(1){
+border-top-left-radius: 10px;
+border-bottom-left-radius: 10px;
+}
+
+.indicatorBar div:nth-child(3){
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    }
+
+.indicatorBar div div{
+    position: relative;
+    background-color: rgb(141, 146, 222);
+    left: 50%;;
+    margin-top: 10px;
+    transform: translate(-50%,0);
+    border-radius: 4px !important;
+}
+.indicatorBar div div:hover{
+    background-color: rgb(132, 140, 251);
+}
+.indicatorBar div div:hover:after{
+    background-color: rgb(132, 140, 251);
+}
+.indicatorBar div div:after{
+    content:'';
+    position: absolute;
+    height: 8px;
+    width: 8px;
+    background-color: rgb(141, 141, 222);
+    z-index: -1;
+    top:0px;
+    left:50%;
+    transform: translate(-50%,-50%) rotate(45deg);
+}
