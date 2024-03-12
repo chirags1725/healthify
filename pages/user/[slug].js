@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import styles from "@/styles/Homepage.module.css";
 import Image from "next/image";
-import OpenAI from "openai";
 import Tests from "@/Components/tests";
 import Link from "next/link";
 
