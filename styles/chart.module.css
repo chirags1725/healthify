@@ -1,43 +1,101 @@
-.testhg
-{
-    width: fit-content;
-    background-color: red;
+.canvas{
+  position: absolute;
+  left:140px;
+  top:60px
 }
-.test
+.headingblood
 {
-    width: fit-content;
+  position: absolute;
+  top:40px;
+  left:40px;
 
-    background-color: lightgreen;
 }
 
-.indicatorbar {
-    width: 100%;
-    height: 20px;
-    background-color: #ddd; /* Default background color */
-    position: relative;
-  }
-  
-  .indicator {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-  }
-  
-  .indicator.lower {
-    left: 0;
-    width: calc(25% - 1px); /* Adjust the percentage based on your lower value */
-    background-color: red; /* Color for lower value */
-  }
-  
-  .indicator.normal {
-    left: calc(25% + 1px); /* Adjust the percentage based on your lower value */
-    width: calc(50% - 2px); /* Adjust the percentage based on your normal range */
-    background-color: green; /* Color for normal range */
-  }
-  
-  .indicator.upper {
-    right: 0;
-    width: calc(25% - 1px); /* Adjust the percentage based on your upper value */
-    background-color: red; /* Color for upper value */
-  }
-  
+.headingdia
+{
+  position: absolute;
+  top:120px;
+  left:540px;
+  /* transform: translate(50%); */
+
+}
+.headingdia .boxup{
+  color:green;
+  padding-left: 40px;
+  padding-right: 40px;
+  background-color: rgb(187, 240, 194) !important;
+}
+
+.headingliver
+{
+  position: absolute;
+  top:280px;
+  left:620px;
+  /* transform: translate(50%); */
+
+}
+.headinganemia{
+  position: absolute;
+  top:440px;
+  left:580px
+}
+
+.headingkid{
+  position: absolute;
+  top:300px;
+  left:40px
+}
+.headingelec{
+  position: absolute;
+  top:520px;
+  left:80px
+}
+.headingmin{
+  position: absolute;
+  top:580px;
+  left:600px
+}
+.boxup{
+
+  border:1px solid black;
+  background-color: rgba(253, 193, 140, 0.243);
+  border-radius: 10px;
+
+
+}
+.box{
+  display: flex;
+
+
+
+
+}
+.head{
+  border-bottom: 1px solid black;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  align-items: center;
+  background-color: rgba(255, 215, 222, 0.851);
+  text-align: center;
+}
+.box .tests{
+  border-right:1px solid black
+}
+.value ul{
+  background-color: rgba(240, 207, 179, 0.505);
+}
+.tests ul
+,.value ul{
+  list-style: none;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.tests ul li
+,.value ul li{
+
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-bottom:1px solid white
+}

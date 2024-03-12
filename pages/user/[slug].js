@@ -5,7 +5,6 @@ import Image from "next/image";
 import OpenAI from 'openai'
 import Tests from "@/Components/tests";
 import Link from "next/link";
-import { GoogleGenerativeAI } from "@google/generative-ai";
 
 
 
@@ -145,7 +144,7 @@ export default function User() {
         <br></br><span>{data && data.customer_name}</span>
       </div>
       </div>
-      <center style={{marginTop:'60px',marginBottom:'20px'}}><h1>
+      <center style={{marginTop:'60px',marginBottom:'20px'}}><h1 className={styles.testsheading}>
         Tests
       </h1>
       </center>
