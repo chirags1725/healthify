@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function Home() {
   const router = useRouter();
 
-  const url = "https://healthify-smoky.vercel.app";
+  const url = "https://redcliffe.vercel.app/";
 
   const [bookingid, setBookingid] = useState("");
   const [name, setName] = useState("");
