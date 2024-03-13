@@ -5,7 +5,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Healthify</title>
+        <title>Redcliffe Labs - Healthy india ki trusted lab</title>
       </Head>
       <Component {...pageProps} />
     </>
