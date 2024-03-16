@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<!-- This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
@@ -37,4 +37,69 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details. -->
+
+
+Visit [Redcliffe.vercel.app](https://redcliffe.vercel.app/)
+
+
+## Overview
+
+The Lab Report Summarizer is a web application built using Next.js and Google's Gemini model. Its purpose is to automatically generate personalized summaries of lab reports for patients, providing clear explanations, visually appealing information, and actionable insights. This tool aims to address the common pain point of patients struggling with confusing and jargon-filled reports, enabling them to make better-informed healthcare decisions.
+
+## Features
+
+- Automatic generation of personalized summaries for lab reports.
+- Clear explanations of lab results.
+- Visualizations to aid in understanding.
+- Actionable insights based on the report analysis.
+
+## Dependencies
+
+The Lab Report Summarizer relies on the following dependencies:
+
+- Next.js: A React framework for building server-side rendered applications.
+- Gemini Model: Google's Gemini model for generating summaries for each test.
+- React: A JavaScript library for building user interfaces.
+- Mongodb: Database management for the sample data provided.
+
+## Setup Instructions
+
+To set up the project locally, follow these steps:
+
+1. Clone the repository:
+
+```git clone https://github.com/chirags1725/redcliffe.git```
+
+2. Navigate to the project directory:
+
+```cd redcliffe```
+
+
+3. Install dependencies:
+
+```npm install```
+
+
+4. Set up environment variables:
+
+Create a `.env.local` file in the root of the project and define the following environment variables:
+
+```AI_API=your_gemini_api_key```
+
+>Replace `your_gemini_api_key` with your actual Gemini API key.
+
+5. Start the development server:
+
+npm run dev
+
+6. Open your browser and visit `http://localhost:3000` to view the application.
+
+## Usage
+
+1. Enter your Booking id and Name into the form provided on the main page.
+2. Click on the "Submit" button.
+3. Personalised cover page will be generated.
+4. All the tests will be listed with your result grouped with the test parameters, indicating your result.
+5. You can also view Chart view.
+6. On clicking a particular test, a response will be generated for the test, with common reasons for abnormal results. An indicator bar will be shown displaying your result, normal range for the test.
