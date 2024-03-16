@@ -91,7 +91,7 @@ Create a `.env.local` file in the root of the project and define the following e
 
 5. Start the development server:
 
-npm run dev
+```npm run dev```
 
 6. Open your browser and visit `http://localhost:3000` to view the application.
 
