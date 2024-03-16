@@ -59,7 +59,7 @@ The Lab Report Summarizer is a web application built using Next.js. Its purpose 
 The Lab Report Summarizer relies on the following dependencies:
 
 - Next.js: A React framework for building server-side rendered applications.
-- Gemini Model: Google's Gemini model for generating summaries for each test.
+- Google's Gemini Model: Google's Gemini model for generating summaries for each test.
 - React: A JavaScript library for building user interfaces.
 - Mongodb: Database management for the sample data provided.
 
@@ -102,4 +102,4 @@ Create a `.env.local` file in the root of the project and define the following e
 3. Personalised cover page will be generated.
 4. All the tests will be listed with your result grouped with the test parameters, indicating your result.
 5. You can also view Chart view.
-6. On clicking a particular test, a response will be generated for the test, with common reasons for abnormal results. An indicator bar will be shown displaying your result, normal range for the test.
+6. On clicking a particular test, a summary will be generated for the test, with common reasons for abnormal results. An indicator bar will be shown displaying your result, normal range for the test.
