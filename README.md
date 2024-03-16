@@ -81,13 +81,15 @@ To set up the project locally, follow these steps:
 ```npm install```
 
 
-4. Set up environment variables:
+4. Set up environment variables :
 
 Create a `.env.local` file in the root of the project and define the following environment variables:
 
-```AI_API=your_gemini_api_key```
+```AI_API=your_gemini_api_key (need not to do as this app is currently using hardcoded api key)```
 
 >Replace `your_gemini_api_key` with your actual Gemini API key.
+
+```MONGO_URI=mongodb+srv://redcliff:redcliff@healthify.iaxx1f2.mongodb.net/?retryWrites=true&w=majority&appName=Healthify```
 
 5. Start the development server:
 
