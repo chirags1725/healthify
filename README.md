@@ -45,7 +45,7 @@ Visit [Redcliffe.vercel.app](https://redcliffe.vercel.app/)
 
 ## Overview
 
-The Lab Report Summarizer is a web application built using Next.js and Google's Gemini model. Its purpose is to automatically generate personalized summaries of lab reports for patients, providing clear explanations, visually appealing information, and actionable insights. This tool aims to address the common pain point of patients struggling with confusing and jargon-filled reports, enabling them to make better-informed healthcare decisions.
+The Lab Report Summarizer is a web application built using Next.js. Its purpose is to automatically generate personalized summaries of lab reports for patients, providing clear explanations, visually appealing information, and actionable insights. This tool aims to address the common pain point of patients struggling with confusing and jargon-filled reports, enabling them to make better-informed healthcare decisions.
 
 ## Features
 
