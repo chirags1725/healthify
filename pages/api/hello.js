@@ -2,8 +2,6 @@ import { MongoClient, ServerApiVersion } from "mongodb";
 
 const handler = async (req, res) => {
   // Set CORS headers
-  res.setHeader("Access-Control-Allow-Origin", "*"); // Adjust origin as needed
-  res.setHeader("Access-Control-Allow-Methods", "GET,OPTIONS"); // Adjust allowed methods as needed
 
   // Check if it's a preflight request (OPTIONS) and handle it
   if (req.method === "OPTIONS") {
