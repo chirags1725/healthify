@@ -85,7 +85,7 @@ To set up the project locally, follow these steps:
 
 Create a `.env.local` file in the root of the project and define the following environment variables:
 
-```MONGO_URI=mongodb+srv://redcliff:redcliff@healthify.iaxx1f2.mongodb.net/?retryWrites=true&w=majority&appName=Healthify```
+>MONGO_URI=mongodb+srv://redcliff:redcliff@healthify.iaxx1f2.mongodb.net/?retryWrites=true&w=majority&appName=Healthify
 
 5. Start the development server:
 
@@ -96,6 +96,10 @@ Create a `.env.local` file in the root of the project and define the following e
 ## Usage
 
 1. Enter your Booking id and Name into the form provided on the main page.
+
+>Sample Booking id:
+>Sample Name:
+
 2. Click on the "Submit" button.
 3. Personalised cover page will be generated.
 4. All the tests will be listed with your result grouped with the test parameters, indicating your result.
